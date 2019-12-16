@@ -27,5 +27,9 @@ class SessionsController < ApplicationController
         redirect_to user_path
     end
 
-    
+    private
+
+    def auth
+        request.env['omniauth.auth']
+    end
 end
