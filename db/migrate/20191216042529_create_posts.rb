@@ -1,10 +1,9 @@
-class CreatePosts < ActiveRecord::Migration[6.0]
+class CreateCommitments < ActiveRecord::Migration[6.0]
   def change
-    create_table :posts do |t|
+    create_table :commitments do |t|
       t.integer :user_id
-      t.integer :location_id
-      t.string :title
-      t.text :story
+      t.integer :pledge_id
+      t.string :frequency
 
       t.timestamps
     end

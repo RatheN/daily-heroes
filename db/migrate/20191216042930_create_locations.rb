@@ -1,8 +1,8 @@
-class CreateLocations < ActiveRecord::Migration[6.0]
+class CreatePledges < ActiveRecord::Migration[6.0]
   def change
-    create_table :locations do |t|
-      t.string :city
-      t.string :country
+    create_table :pledges do |t|
+      t.string :action
+      t.text :description
 
       t.timestamps
     end
