@@ -5,5 +5,8 @@ class PledgesController < ApplicationController
         @pledge = Pledge.new
     end
 
+    def show
+        @pledge = Pledge.find_by(params[:id])
+    end
     
 end
