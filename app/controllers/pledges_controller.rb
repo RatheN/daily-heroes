@@ -13,6 +13,15 @@ class PledgesController < ApplicationController
         @pledge = Pledge.find_by(params[:id])
     end
 
+    def create
+        @pledge = Pledge.new(pledge_params)
+        if @pledge.save
+            redirect_to pledges_path
+        else
+            render '/pledges/new'
+        end
+    end
+
     private
 
     def pledge_params
