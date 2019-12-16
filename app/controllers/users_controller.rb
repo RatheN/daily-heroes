@@ -2,7 +2,6 @@ class UsersController < ApplicationController
     before_action :authorize, only: [:show]
 
     def index
-        @users = User.all
     end
       
     def new
