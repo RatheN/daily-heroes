@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
         !!current_user
     end
     
-    def if_logged_out
+    def authorize
         redirect_to '/' if !logged_in?
     end
 end
