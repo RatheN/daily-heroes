@@ -1,1 +1,7 @@
-# create a new pledge
+<%= form_for @pledge do |f| %>
+
+    Action: <%= f.text_field :action %> <br><br>
+    Description: <%= f.text_field :description %><br><br>
+    
+    <%= f.submit  %>
+<% end %>

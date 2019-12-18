@@ -1,1 +1,8 @@
-# show all pledges, link each to show page, create new pledge
+<ul>
+  <% @pledges.order('action ASC').each do |p| %>
+  <li>
+    <%= link_to p.action, pledge_path(p) %>
+    <%= p.description %>
+  </li>
+  <% end %>
+</ul>

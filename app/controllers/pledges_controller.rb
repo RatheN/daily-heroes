@@ -10,13 +10,13 @@ class PledgesController < ApplicationController
     end
 
     def show
-        @pledge = Pledge.find_by(params[:id])
+        @pledge = Pledge.find_by_id(params[:id])
     end
 
     def create
         @pledge = Pledge.new(pledge_params)
         if @pledge.save
-            redirect_to pledges_path
+            redirect_to pledges_path(@pledge)
         else
             render '/pledges/new'
         end
@@ -25,7 +25,7 @@ class PledgesController < ApplicationController
     private
 
     def pledge_params
-        params.require(:pledge).permit(:action)
+        params.require(:pledge).permit(:action, :description)
     end
 
 end

@@ -1,1 +1,4 @@
-# selected pledge from index, option to commit(redirect to commitments new)
+<h1><%= @pledge.action %></h1>
+<h1><%= @pledge.description %></h1>
+
+<%= link_to 'new commitment', new_pledge_commitment_path(@pledge) %>
