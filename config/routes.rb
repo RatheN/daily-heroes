@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new', as: 'login'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+  get '/auth/:provider/callback' => 'sessions#omniauth'
 
   root 'welcome#home'
   
