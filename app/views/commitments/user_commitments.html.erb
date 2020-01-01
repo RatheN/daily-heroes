@@ -1,0 +1,9 @@
+<h1><%= current_user.name %>'s Commitments:</h1>
+<ul>
+    <% @commitments.each do |p| %>
+        <li>
+            <%= link_to p.pledge.action, commitment_path(p) %>
+            <%= p.frequency %>
+        </li>
+    <% end %>
+</ul>

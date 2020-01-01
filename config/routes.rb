@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#omniauth'
+  get '/user_commitments' => 'commitments#user_commitments'
 
   root 'welcome#home'
   
