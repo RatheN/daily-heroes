@@ -1,27 +1,54 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
 
-  <div class="navbar-menu">
-    <div class="navbar-start">
-      <%= link_to "Home", root_path, class: "navbar-item" %>
-      <% if logged_in? %>
-        <%= link_to "All Pledges", pledges_path, class: "navbar-item"  %>
-        <%= link_to "Commitments", commitments_path, class: "navbar-item"  %>
-        <%= link_to "New Pledge", new_pledge_path(current_user), class: "navbar-item"  %>
-      <% end %>
-    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <%= link_to "Home", root_path, class: "navbar-item" %>
+            <% if logged_in? %>
+        
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Pledges
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item">
+                            <%= link_to "All Pledges", pledges_path, class: "navbar-item"  %>
+                        </a>
+                        <a class="navbar-item">
+                            Top Pledges
+                        </a>
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Commitments
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item">
+                            <%= link_to "All Commitments", commitments_path, class: "navbar-item"  %>
+                        </a>
+                        <a class="navbar-item">
+                            Your Commitments
+                        </a>
+                    </div>
+                </div>
+
+                <%= link_to "New Pledge", new_pledge_path(current_user), class: "navbar-item"  %>
+            <% end %>
+        </div>
 
     <div class="navbar-end is-active">
-      <div class="navbar-item">
-        <div class="buttons">
-          <% if logged_in? %>
-            <%= current_user.name %>
-            <%= link_to "Log Out", logout_path, class: "button is-primary" %>
-          <% else %>
-            <%= link_to "Sign Up", signup_path, class: "button is-primary" %>
-            <%= link_to "Log In", login_path, class: "button is-light" %>
-          <% end %>
+        <div class="navbar-item">
+            <div class="buttons">
+                <% if logged_in? %>
+                    <%= current_user.name %>&nbsp&nbsp;
+                    <%= link_to "Log Out", logout_path, class: "button is-primary" %>
+                <% else %>
+                    <%= link_to "Sign Up", signup_path, class: "button is-primary" %>
+                    <%= link_to "Log In", login_path, class: "button is-light" %>
+                <% end %>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    </div>
 </nav>

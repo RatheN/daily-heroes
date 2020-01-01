@@ -5,8 +5,8 @@ class CommitmentsController < ApplicationController
     end
 
     def index
-        if @pledge
-            @commitments = Commitment.all
+        if params[:user_id]
+            @Commitments = Commitment.where(user_id: params[:user_id])
         else
             @commitments = Commitment.all
         end
