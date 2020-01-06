@@ -1,8 +1,19 @@
-<ul>
-  <% @pledges.order('action ASC').each do |p| %>
-  <li>
-    <%= link_to p.action, pledge_path(p) %>
-    <%= p.description %>
-  </li>
-  <% end %>
-</ul>
+
+<table class="table is-fullwidth">
+    <thead>
+        <tr>
+            <th>Pledge</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <% @pledges.each do |p| %>
+
+    <tbody>
+        <tr>
+            <td> <%= link_to p.action, pledge_path(p) %> </td>
+            <td> <%= p.description %> </td>
+        </tr>
+    </tbody>
+    <% end %>
+</table>

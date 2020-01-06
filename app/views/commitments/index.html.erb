@@ -1,10 +1,21 @@
-<h1>Commitments</h1>
-<ul>
-  <% @commitments.each do |p| %>
-  <li>
-  <%= p.user.name %>
-  <%= link_to p.pledge.action, commitment_path(p) %>
-  <%= p.frequency %>
-  </li>
-  <% end %>
-</ul>
+
+<table class="table is-fullwidth">
+    <thead>
+        <tr>
+            <th>Pledge</th>
+            <th>Frequency</th>
+            <th>User</th>
+        </tr>
+    </thead>
+
+    <% @commitments.each do |p| %>
+
+    <tbody>
+        <tr>
+            <td> <%= link_to p.pledge.action, commitment_path(p) %> </td>
+            <td> <%= p.frequency %> </td>
+            <th> <%= p.user.name %> </th>
+        </tr>
+    </tbody>
+    <% end %>
+</table>

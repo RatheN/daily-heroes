@@ -1,9 +1,19 @@
-<h1><%= current_user.name %>'s Commitments:</h1>
-<ul>
+
+<table class="table is-fullwidth">
+    <thead>
+        <tr>
+            <th>Pledge</th>
+            <th>Frequency</th>
+        </tr>
+    </thead>
+
     <% @commitments.each do |p| %>
-        <li>
-            <%= link_to p.pledge.action, commitment_path(p) %>
-            <%= p.frequency %>
-        </li>
+
+    <tbody>
+        <tr>
+            <td> <%= link_to p.pledge.action, commitment_path(p) %> </td>
+            <td> <%= p.frequency %> </td>
+        </tr>
+    </tbody>
     <% end %>
-</ul>
+</table>
