@@ -25,6 +25,8 @@ class CommitmentsController < ApplicationController
     def user_commitments
         if logged_in?
             @commitments = current_user.commitments
+        else
+            redirect_to '/commitments'
         end
     end
 

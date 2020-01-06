@@ -1,0 +1,21 @@
+
+<table class="table is-fullwidth">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Pledge</th>
+            <th>Commitment Count</th>
+        </tr>
+    </thead>
+
+    <% @pledges.each do |p| %>
+
+    <tbody>
+        <tr>
+            <th> <%= @count+= 1 %> </th>
+            <td> <%= p.action %> </td>
+            <td> <%= p.commitments.count %> </td>
+        </tr>
+    </tbody>
+    <% end %>
+</table>

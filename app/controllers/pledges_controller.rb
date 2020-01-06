@@ -22,6 +22,11 @@ class PledgesController < ApplicationController
         end
     end
 
+    def top_pledges
+        @count = 0
+        @pledges = Pledge.most_commitments
+    end
+
     private
 
     def pledge_params
