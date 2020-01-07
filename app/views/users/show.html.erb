@@ -1,1 +1,20 @@
-<h3>Welcome, <%= current_user.name %>.</h3>
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Daily Heroes
+            </h1>
+            <h2 class="subtitle">
+                Welcome, <%= current_user.name %>!
+            </h2>
+        </div>
+    </div>
+</section>
+
+<div class="container is-mobile is-centered">
+    <div class="container is-half">
+        <ul>
+            Get back into it, <%= current_user.name %>! You're doing great!
+        </ul>
+    </div>
+</div>

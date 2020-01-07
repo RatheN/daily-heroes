@@ -7,5 +7,6 @@ class Pledge < ApplicationRecord
         .joins(:commitments)
         .group("pledges.id")
         .order("pledge_count DESC")
+        .limit(5)
         )}
 end

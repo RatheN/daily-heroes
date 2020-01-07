@@ -1,8 +1,34 @@
-<h1>Welcome to Daily Heroes.</h1>
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Daily Heroes
+            </h1>
+            <h2 class="subtitle">
+                <% if !logged_in? %>
+                    Welcome to Daily Heroes!
+                <% else %>
+                    Welcome, <%= current_user.name %>!
+                <% end %>
+            </h2>
+        </div>
+    </div>
+</section>
 
+<div class="container is-mobile is-centered">
+    <div class="container is-half">
 <% if !logged_in? %>
-    <%= link_to "Log In", login_path, :class => "btn btn-primary" %>
-    <%= link_to 'Sign Up', signup_path, :class => "btn btn-primary" %>
+    <ul>
+        Daily Heroes is an app designed to help users improve the way they live, one commitment at a time.<br>
+        Commit to make a positive change in your life and try your best to stick to it! Commitments can be as small as thanking someone every chance you get.<br>
+        It may not seem like much but these things can make a huge difference in someone's day. Getting the motivation to go to the gym is no easy task,<br>
+        but having a community that encourages and pushes you can always help! Daily Heroes is primarily designed to help motivate users to live their best lives.<br>
+        No matter what change you want to make in your life, Daily Heroes is here to help.<br><br>
+
+        <%= link_to 'Sign Up', signup_path, :class => "btn btn-primary" %> to start improving today, or <%= link_to "Log In", login_path, :class => "btn btn-primary" %> to check your commitments.
+    </ul>
 <% else %>
-    <h3> Welcome, <%= current_user.name %>! </h3>
+    <h3> You're doing great, <%= current_user.name %>! Keep going!</h3>
 <% end %>
+    </div>
+</div>
