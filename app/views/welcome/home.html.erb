@@ -18,7 +18,7 @@
 <div class="container is-mobile is-centered">
     <div class="container is-half">
 <% if !logged_in? %>
-    <ul>
+    <p>
         Daily Heroes is an app designed to help users improve the way they live, one commitment at a time.<br>
         Commit to make a positive change in your life and try your best to stick to it! Commitments can be as small as thanking someone every chance you get.<br>
         It may not seem like much but these things can make a huge difference in someone's day. Getting the motivation to go to the gym is no easy task,<br>
@@ -26,7 +26,7 @@
         No matter what change you want to make in your life, Daily Heroes is here to help.<br><br>
 
         <%= link_to 'Sign Up', signup_path, :class => "btn btn-primary" %> to start improving today, or <%= link_to "Log In", login_path, :class => "btn btn-primary" %> to check your commitments.
-    </ul>
+    </p>
 <% else %>
     <h3> You're doing great, <%= current_user.name %>! Keep going!</h3>
 <% end %>
