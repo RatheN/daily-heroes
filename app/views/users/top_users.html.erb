@@ -1,0 +1,33 @@
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Daily Heroes
+            </h1>
+            <h2 class="subtitle">
+                Top 5 Users
+            </h2>
+        </div>
+    </div>
+</section>
+
+<table class="table is-fullwidth">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>User</th>
+            <th>Commitment Count</th>
+        </tr>
+    </thead>
+
+    <% @users.each do |p| %>
+
+    <tbody>
+        <tr>
+            <th> <%= @count+= 1 %> </th>
+            <td> <%= p.name %> </td>
+            <td> <%= p.commitments.count %> </td>
+        </tr>
+    </tbody>
+    <% end %>
+</table>

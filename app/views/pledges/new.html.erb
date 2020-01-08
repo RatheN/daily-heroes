@@ -1,3 +1,33 @@
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Daily Heroes
+            </h1>
+            <h2 class="subtitle">
+                Create a New Pledge
+            </h2>
+        </div>
+    </div>
+</section>
+
+<% if @pledge.errors.any? %>
+    <article class="message is-danger">
+        <div class="message-header">
+            <%= pluralize(@pledge.errors.count, "error") %> detected:
+        </div>
+    </article>
+    <% @pledge.errors.full_messages.each do |msg| %>
+        <article class="message is-danger">
+            <div class="message-body">
+                <%= msg %>
+            </div>
+        </article>
+    <% end %>
+<% end %>
+
+<br>
+
 <%= form_for @pledge do |f| %>
 
     Action: <%= f.text_field :action %> <br><br>
@@ -5,3 +35,4 @@
     
     <%= f.submit  %>
 <% end %>
+

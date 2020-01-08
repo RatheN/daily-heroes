@@ -14,4 +14,12 @@ class User < ApplicationRecord
             user.password = SecureRandom.hex
         end
     end
+
+    scope :top_users, -> {(
+        select("users.id, users.name, count(users.id) as user_count")
+        .joins(:commitments)
+        .group("users.id")
+        .order("user_count DESC")
+        .limit(5)
+        )}
 end

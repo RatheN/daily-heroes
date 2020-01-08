@@ -1,6 +1,15 @@
 <%= form_tag("/pledges/#{@pledge_id}/commitments", method: :post) do %>
 <%= hidden_field_tag :user_id, session[:user_id] %>
 <%= hidden_field_tag :pledge_id %>
-<%= text_area_tag :frequency %>
+
+<div class="field">
+  <label class="label">Frequency: </label>
+  <div class="control">
+    <%= text_area_tag :frequency %>
+  </div>
+  <p class="help">How often will you do this action?</p>
+</div>
+
 <%= submit_tag "Commit" %>
 <% end %>
+

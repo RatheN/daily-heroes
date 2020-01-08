@@ -3,6 +3,7 @@ class CommitmentsController < ApplicationController
 
     def new
         @pledge_id = params[:pledge_id]
+        @pledge = Pledge.find_by(id: params[:pledge_id])
     end
 
     def index

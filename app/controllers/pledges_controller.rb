@@ -11,6 +11,7 @@ class PledgesController < ApplicationController
 
     def show
         @pledge = Pledge.find_by_id(params[:id])
+        @user = User.find_by_id(params[:user_id])
     end
 
     def create

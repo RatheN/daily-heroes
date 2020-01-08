@@ -11,10 +11,3 @@
     </div>
 </section>
 
-
-<%= form_for @commitment do |c| %>
-    <%= c.hidden_field :user_id, :value => session[:user_id] %>
-    <%= c.hidden_field :pledge_id %>
-    <%= c.text_area :frequency %>
-    <%= submit_tag "Commit" %>
-<% end %>

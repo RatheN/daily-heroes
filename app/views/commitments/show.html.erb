@@ -29,7 +29,8 @@
     </tbody>
 </table>
 
-<div class="buttons">
-  <button class="button is-primary"><%= link_to "Edit Commitment", edit_commitment_path(@commitment) if @commitment.user == current_user %></button>
-  <button class="button is-danger"> <%= button_to "delete", @commitment, :method => :delete if @commitment.user == current_user %> </button>
-</div>
+<% if @commitment.user == current_user %>
+    <div class="buttons">
+        <button class="button is-danger"> <%= button_to "delete", @commitment, :method => :delete %> </button>
+    </div>
+<% end %>

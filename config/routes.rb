@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#omniauth'
   get '/user_commitments' => 'commitments#user_commitments'
   get '/top_pledges' => 'pledges#top_pledges'
+  get '/top_users' => 'users#top_users'
 
   root 'welcome#home'
   

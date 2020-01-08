@@ -1,4 +1,38 @@
-<h1><%= @pledge.action %></h1>
-<h1><%= @pledge.description %></h1>
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Daily Heroes
+            </h1>
+            <h2 class="subtitle">
+                <%= @pledge.action %>
+            </h2>
+        </div>
+    </div>
+</section>
 
-<%= link_to 'new commitment', new_pledge_commitment_path(@pledge) %>
+<br>
+
+<table class="table is-fullwidth">
+    <thead>
+        <tr>
+            <th>Pledge</th>
+            <th>Description</th>
+            <th>Amount of Commitments</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td> <%= @pledge.action %> </td>
+            <td> <%= @pledge.description %> </td>
+            <td> <%= @pledge.commitments.count %> </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<div class="buttons">
+    <button class="button is-primary"> <%= link_to 'Commit to this Pledge', new_pledge_commitment_path(@pledge) %> </button>
+</div>

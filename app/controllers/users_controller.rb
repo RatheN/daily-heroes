@@ -26,6 +26,11 @@ class UsersController < ApplicationController
         @user = current_user
     end
 
+    def top_users
+        @count = 0
+        @users = User.top_users
+    end
+
     private
 
     def user_params
