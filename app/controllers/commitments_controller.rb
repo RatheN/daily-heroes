@@ -19,6 +19,8 @@ class CommitmentsController < ApplicationController
     end
 
     def edit
+        @pledge_id = params[:pledge_id]
+        Commitment.find(params[:id]).destroy
     end
 
     def create

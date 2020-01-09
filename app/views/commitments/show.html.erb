@@ -31,6 +31,7 @@
 
 <% if @commitment.user == current_user %>
     <div class="buttons">
+        <button class="button is-primary"> <%= link_to "Edit", edit_pledge_commitment_path(@commitment.pledge.id, @commitment.id) %> </button>
         <button class="button is-danger"> <%= button_to "delete", @commitment, :method => :delete %> </button>
     </div>
 <% end %>

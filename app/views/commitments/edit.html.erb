@@ -5,9 +5,12 @@
                 Daily Heroes
             </h1>
             <h2 class="subtitle">
-              Edit Your Commitment
+              Edit Your Commitment to <%= @commitment.pledge.action %>
             </h2>
         </div>
     </div>
 </section>
+<br>
 
+
+<%= render partial: 'form', :pledge_id => @commitment.pledge_id %>
