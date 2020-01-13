@@ -1,24 +1,15 @@
-# README
+# Daily Heroes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Daily heroes is a Rails application designed to create and track a user's commitments. A user can commit to it's own pledges, as well as pledges from other users.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+1. Fork the repository
+2. Clone the files to your computer
+3. Run `bundle install`
+4. Run `rake db:migrate`
+5. Run `rails s` to start the server
 
-* System dependencies
+## Location
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+After starting the server, the site is located at: http://localhost:3000

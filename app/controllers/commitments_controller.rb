@@ -42,7 +42,7 @@ class CommitmentsController < ApplicationController
         Commitment.find(params[:id]).destroy
         flash[:notice] = "Commitment was deleted."
         redirect_to commitments_path(current_user)
-      end
+    end
 
     def user_commitments
         if logged_in?
@@ -61,5 +61,5 @@ class CommitmentsController < ApplicationController
     def find_pledge
         @pledge = Pledge.find_by(id: params[:pledge_id])
         @commitment = Commitment.find_by_id(params[:id])
-      end
+    end
 end
