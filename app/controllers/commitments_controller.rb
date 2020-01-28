@@ -15,7 +15,6 @@ class CommitmentsController < ApplicationController
     end
 
     def show
-        @commitment = Commitment.find_by_id(params[:id])
     end
 
     def edit

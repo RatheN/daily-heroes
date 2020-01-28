@@ -1,5 +1,4 @@
 class PledgesController < ApplicationController
-    before_action :authorize, only: [:create, :new]
 
     def index
         @pledges = Pledge.all
